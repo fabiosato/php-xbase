@@ -131,6 +131,7 @@ class Table
             }
 
             $this->recordPos++;
+            unset($this->record);
             $this->record = new Record($this, $this->recordPos, $this->readBytes($this->recordByteLength));
 
             if ($this->record->isDeleted()) {
